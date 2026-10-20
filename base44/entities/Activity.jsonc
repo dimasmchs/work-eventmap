@@ -1,0 +1,52 @@
+{
+  "name": "Activity",
+  "type": "object",
+  "properties": {
+    "facility_id": {
+      "type": "string",
+      "description": "Owning facility id"
+    },
+    "name": {
+      "type": "string",
+      "description": "Activity name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Activity description"
+    },
+    "start_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Start time"
+    },
+    "end_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "End time"
+    }
+  },
+  "required": [
+    "facility_id",
+    "name",
+    "start_time",
+    "end_time"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
